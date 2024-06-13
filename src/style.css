@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    text-align: center;
+    text-size-adjust: 20px;
+    background-color: #1c011f;
+    width: 100%;
+    padding: 20px;
+    color: aliceblue;
+}
+body {
+    background-color: #480551;
+}
+.card-body{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 10px;
+}
+.memory-game {
+    width: 640px;
+    height: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    margin: 10px;
+}
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.memory-card:active {
+    transform: scale(0.97);
+    transition: transform 0.2s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 5px;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+
+.hidden {
+    display: none;
+}
+
+#victory-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 30PX;
+    color: green;
+}
